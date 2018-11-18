@@ -2,6 +2,7 @@
 from tkinter import *
 import sqlite3
 import tkinter.messagebox
+
 # connect to the databse.
 conn = sqlite3.connect('database.db')
 # cursor to move around the databse
@@ -9,6 +10,10 @@ c = conn.cursor()
 
 # empty list to later append the ids from the database
 ids = []
+
+
+
+
 
 # tkinter window
 class Application:
@@ -18,9 +23,14 @@ class Application:
         # creating the frames in the master
         self.left = Frame(master, width=800, height=720, bg='lightgreen')
         self.left.pack(side=LEFT)
+       
+       
+
+        
 
         self.right = Frame(master, width=400, height=720, bg='steelblue')
         self.right.pack(side=RIGHT)
+       
 
         # labels for the window
         self.heading = Label(self.left, text="Sagar Hospital Appointments", font=('arial 40 bold'), fg='black', bg='lightgreen')
@@ -98,6 +108,14 @@ class Application:
         self.val4 = self.location_ent.get()
         self.val5 = self.time_ent.get()
         self.val6 = self.phone_ent.get()
+
+        self.name_ent.delete(0,'end')
+        self.age_ent.delete(0,'end')
+        self.gender_ent.delete(0,'end')
+        self.location_ent.delete(0,'end')
+        self.time_ent.delete(0,'end')
+        self.phone_ent.delete(0,'end')
+         
 
         # checking if the user input is empty
         if self.val1 == '' or self.val2 == '' or self.val3 == '' or self.val4 == '' or self.val5 == '':
