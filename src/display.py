@@ -12,10 +12,10 @@ res = c.execute(sql)
 
 root = tk.Tk()
 root.title("Appointments")
-root.geometry("400x300")
+root.geometry("450x400")
 root.config(bg='lightgreen')
 
-labels=["ID","  NAME"," AGE","  GENDER","   LOCATION"," PHONE NUMBER"," TIME"]
+labels=["ID","  NAME"," AGE","  GENDER","   LOCATION"," PHONE NUMBER"," TIME","FOR"]
 
 r=0
 c=0
@@ -26,7 +26,7 @@ for l in labels:
 r=r+1
 
 for i in res:
-    for c in range(7):
+    for c in range(8):
         tk.Label(root, bg='lightgreen',text=i[c],borderwidth=1).grid(row=r,column=c)
         c=c+1
     r=r+1
