@@ -15,7 +15,7 @@ c = conn.cursor()
 class Application:
     def __init__(self, master):
         self.master = master
-        self.heading = Label(master, text="Billing",  fg='steelblue',bg='lightgreen', font=('arial 40 bold'))
+        self.heading = Label(master, text="Sagar Hospitals",  fg='steelblue',bg='lightgreen', font=('arial 40 bold'))
         self.heading.place(x=150, y=0)
 
         self.name = Label(master, text="Enter Patient's Name",bg='lightgreen', font=('arial 18 bold'))
@@ -51,17 +51,17 @@ class Application:
         self.uphone.place(x=0, y=220)
 
 
-        self.ent1 = Label(self.master, width=30, text=str(self.name1), bg='lightgreen', anchor=W)
+        self.ent1 = Label(self.master, width=30, text=str(self.name1), bg='lightgreen', anchor=W, font=('arial 14'))
         self.ent1.place(x=300, y=140)
 
 
-        self.ent4 = Label(self.master, width=30, text=str(self.location), bg='lightgreen', anchor=W)
+        self.ent4 = Label(self.master, width=30, text=str(self.location), bg='lightgreen', anchor=W, font=('arial 14'))
         self.ent4.place(x=300, y=180)
 
-        self.ent5 = Label(self.master, width=30, text=str(self.phone), bg='lightgreen', anchor=W)
+        self.ent5 = Label(self.master, width=30, text=str(self.phone), bg='lightgreen', anchor=W, font=('arial 14'))
         self.ent5.place(x=300, y=220)
 
-        frameReason = Frame(self.master,bg='lightgreen',relief = 'sunken',borderwidth=2,width=400,height=200)
+        frameReason = Frame(self.master,bg='lightgreen',relief = 'sunken',borderwidth=2,width=420,height=200)
         frameReason.place(x=0, y=260)
 
         self.ureason = Label(frameReason, text="Reason", font=('arial 18 bold'), fg='black', bg='lightgreen')
@@ -77,9 +77,15 @@ class Application:
         self.total.place(x=0, y=160)
 
         cCost = "SELECT cost from reason where name = ?"
-        vCost = c.execute(cCost, (self.input,))
-        self.ent7 = Label(frameReason, text=(settings.diseases[settings.diseases.index(self.reason)]), anchor=W,bg='lightgreen',font=('arial 14 bold'))
+        cMedifee="SELECT medicalfee from reason where name = ?"
+        #vCost = c.execute(cCost,(settings.diseases[settings.diseases.index(self.reason)],))
+        self.ent7 = Label(frameReason, text=(settings.diseases[settings.diseases.index(self.reason)]), anchor=W,bg='lightgreen',font=('arial 14'))
         self.ent7.place(x=300,y=0)
+
+        self.ent8 = Label(frameReason, text=vCost, anchor=W,bg='lightgreen',font=('arial 14 bold'))
+        self.ent8.place(x=300,y=40)
+
+        
 
 
 
