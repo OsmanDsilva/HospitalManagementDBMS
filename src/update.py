@@ -108,11 +108,11 @@ class Application:
                 self.var6 = self.ent6.get()
                 self.var7 = self.variable.get()
 
-                if self.val1 == '' or self.val2 == '' or self.val4 == '' or self.val5 == '' or self.val6 == '':
+                if self.var1 == '' or self.var2 == '' or self.var4 == '' or self.var5 == '' or self.var6 == '':
                     tkinter.messagebox.showinfo("Warning", "Please Fill Up All Boxes")
-                elif int(self.val2)<0 or int(self.val2)>150 or not self.val4.isalpha() or not self.val5.isdigit():
+                elif int(self.var2)<0 or int(self.var2)>150 or not self.var4.isalpha() or not self.var5.isdigit():
                     tkinter.messagebox.showinfo("Warning", "Invalid input")
-                elif self.val6 in settings.times1:
+                elif self.var6 in settings.times1:
                     tkinter.messagebox.showinfo("Warning", "Appointment at this time alreadry exits\n")
                 else:
                     query = "UPDATE appointments SET name=?, age=?, gender=?, location=?,phone=?, scheduled_time=?, for=? WHERE name LIKE ?"
