@@ -76,6 +76,8 @@ class Application:
         self.total = Label(frameReason, text="Total", font=('arial 18 bold'), fg='black', bg='lightgreen')
         self.total.place(x=0, y=160)
 
+        cCost = "SELECT cost from reason where name = ?"
+        vCost = c.execute(cCost, (self.input,))
         self.ent7 = Label(frameReason, text=(settings.diseases[settings.diseases.index(self.reason)]), anchor=W,bg='lightgreen',font=('arial 14 bold'))
         self.ent7.place(x=300,y=0)
 
