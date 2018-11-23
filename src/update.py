@@ -121,7 +121,7 @@ class Application:
                     tkinter.messagebox.showinfo("Updated", "Successfully Updated.")
     def delete_db(self):
                 sql2 = "DELETE FROM appointments WHERE name LIKE ?"
-                sql3 = "UPDATE sqlite_sequence set seq=seq-1 WHERE name='appointments' and seq>0"
+                sql3 = "UPDATE sqlite_sequence set seq=seq-2 WHERE name='appointments' and seq>0"
                 sql5 = "SELECT count(id) FROM appointments"
                 sql6 = "UPDATE sqlite_sequence set seq=0 where name='appointments"
 
