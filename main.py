@@ -6,19 +6,19 @@ import settings
 settings.init()
 
 def run_appointment():
-    os.system('python ./src/appointment.py')
+    os.system('python3 ./src/appointment.py')
 
 def run_display():
-    os.system('python ./src/display.py')
+    os.system('python3 ./src/display.py')
 
 def run_update():
-    os.system('python ./src/update.py')
+    os.system('python3 ./src/update.py')
 
 def run_disease():
-    os.system('python ./src/disease.py')
+    os.system('python3 ./src/disease.py')
 
 def run_billing():
-    os.system('python ./src/billing.py')
+    os.system('python3 ./src/billing.py')
 
 top=Tk()
 
