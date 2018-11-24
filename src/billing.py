@@ -108,7 +108,7 @@ class Application:
         self.update = Button(self.master, text="Print", width=20, height=2, bg='lightblue')
         self.update.place(x=300, y=500)
 
-        self.delete = Button(self.master, text="Save", width=20, height=2, bg='red')
+        self.delete = Button(self.master, text="Save", width=20, height=2, bg='lightblue')
         self.delete.place(x=0, y=500)
 root = Tk()
 b = Application(root)
